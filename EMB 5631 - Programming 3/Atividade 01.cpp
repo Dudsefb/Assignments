@@ -1,3 +1,7 @@
+/* This is a small training program to kickstart my C++ practice.
+ * It receives the number of Hours, Minutes and Seconds and
+ * converts it to seconds only.
+ */
 #include <iostream>
 #include <string>
 #include <vector>
