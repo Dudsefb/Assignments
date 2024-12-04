@@ -1,6 +1,6 @@
 # defina aqui quaisquer ferramentas particulares ao projeto
 CC = g++
-CFLAGS = -Wall -Wextra -O2
+CFLAGS = -Wall -Wextra -O2 -g
 
 #Especifique os diretórios que serão incluídos
 M := model
@@ -32,3 +32,4 @@ $(TEMP)/%.o: $(C)/%.cpp $(C)/%.hpp
 
 clean:
 	rm $(TEMP)/*
+	rm output.exe

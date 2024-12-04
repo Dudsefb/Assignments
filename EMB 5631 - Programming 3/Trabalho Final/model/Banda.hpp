@@ -9,23 +9,25 @@
 #include "Integrante.hpp"
 #include "Musica.hpp"
 
+using namespace std;
+
 class Banda : public Mapeavel{
 	public:
 		Banda();
 		~Banda();
-		std::string getNome();
-		void setNome(const std::string& nome);
-		std::string getGeneroMusical();
-		void setGeneroMusical(const std::string& generoMusical);
-		void addIntegrante(const Integrante& integrante);
-		void addMusica(const Musica& musica);
-		std::map<std::string,std::string> exportar() const override;
-		void importar(const std::map<std::string,std::string>&) override;
+		string getNome();
+		void setNome(const string& nome);
+		string getGeneroMusical();
+		void setGeneroMusical(const string& generoMusical);
+		void addIntegrante(shared_ptr<Integrante> integrante);
+		void addMusica(shared_ptr<Musica> musica);
+		map<string,string> exportar() const override;
+		void importar(const map<string,string>&) override;
 	private:
-		std::string nome;
-		std::string generoMusical;
-		std::list<std::shared_ptr<Integrante>> integrantes;
-		std::list<std::shared_ptr<Musica>> musicas;
+		string nome;
+		string generoMusical;
+		list<shared_ptr<Integrante>> integrantes;
+		list<shared_ptr<Musica>> musicas;
 };
 ;
 #endif

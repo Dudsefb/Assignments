@@ -9,20 +9,22 @@
 #include "Mapeavel.hpp"
 #include "Banda.hpp"
 
+using namespace std;
+
 class Show : public Mapeavel{
 	public:
 		Show();
 		~Show();
-		std::string getNome();
-		void setNome(const std::string& nome);
+		string getNome();
+		void setNome(const string& nome);
 		struct tm getData();
 		void setData(const struct tm& data);
-		void addBanda(const Banda& banda);
-		std::map<std::string,std::string> exportar() const override;
-		void importar(const std::map<std::string,std::string>&) override;
+		void addBanda(shared_ptr<Banda> banda);
+		map<string,string> exportar() const override;
+		void importar(const map<string,string>&) override;
 	private:
-		std::string nomeEvento;
+		string nomeEvento;
 		struct tm dataRealizacao;
-		std::list<std::shared_ptr<Banda>> bandas;
+		list<shared_ptr<Banda>> bandas;
 };
 #endif
